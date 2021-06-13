@@ -1,10 +1,27 @@
-console.log("Script is working from diffferent file")
+var btnTranslate = document.querySelector("#btn-translate");
 
-//input
-var username = prompt("Enter your name below")
+var txtInput = document.querySelector("#txt-input");
+console.log(txtInput);
 
-// processing
-var welcomeMessage = "This script works " + username;
+// whenver there is event click on btn give click
 
-// output
-alert(welcomeMessage)
+// btnTranslate.addEventListener("click" , function clickEventHandler() {
+//     console.log("clicked!")
+// } ); 
+
+// new way of doing the same thing as above
+
+function clickHandler() 
+
+    {
+        console.log("clicked!");
+        console.log("input", txtInput.value);
+    };
+
+    
+// ^Above function will give clicked as output
+
+btnTranslate.addEventListener("click", clickHandler);
+
+
+// ^when event click happens perform function clickhandler. here callback to fucntion happening
