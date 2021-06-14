@@ -1,7 +1,13 @@
 var btnTranslate = document.querySelector("#btn-translate");
 
 var txtInput = document.querySelector("#txt-input");
-console.log(txtInput);
+
+var outputDiv = document.querySelector("#output");
+
+
+// outputDiv.innerText = "Anand";
+
+
 
 // whenver there is event click on btn give click
 
@@ -11,14 +17,13 @@ console.log(txtInput);
 
 // new way of doing the same thing as above
 
-function clickHandler() 
+function clickHandler()
 
-    {
-        console.log("clicked!");
-        console.log("input", txtInput.value);
-    };
+{
+    outputDiv.innerText = "hahahaha " + txtInput.value;
+};
 
-    
+
 // ^Above function will give clicked as output
 
 btnTranslate.addEventListener("click", clickHandler);
