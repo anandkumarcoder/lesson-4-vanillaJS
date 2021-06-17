@@ -3,13 +3,22 @@ var btnTranslate = document.querySelector("#btn-translate");
 var txtInput = document.querySelector("#txt-input");
 
 var outputDiv = document.querySelector("#output");
+// outputDiv.innerText = "Anand"//
+
+var serverURL = "https://api.funtranslations.com/translate/minion.json"
+
+function getTranslationURL(text) {
+    return serverURL + "?" + "text=" + text
+};
+
+function errorHandler(error) {
+    console.log("error occured", error)
+    alert("something wrong with server try again after sometime"   
+)
+};
 
 
-// outputDiv.innerText = "Anand";
-
-
-
-// whenver there is event click on btn give click
+//  for below whenver there is event click on btn give click
 
 // btnTranslate.addEventListener("click" , function clickEventHandler() {
 //     console.log("clicked!")
@@ -20,11 +29,26 @@ var outputDiv = document.querySelector("#output");
 function clickHandler()
 
 {
-    outputDiv.innerText = "hahahaha " + txtInput.value;
+    // outputDiv.innerText = "hahahaha " + txtInput.value;
+    var inputText = txtInput.value; //taking input
+
+    //processing by calling the server
+
+    fetch(getTranslationURL(inputText))
+        .then(response => response.json())
+        .then(json => {
+            var translatedText = json.contents.translated;
+
+            outputDiv.innerText = translatedText;}) //output
+        .catch(errorHandler)
 };
 
 
 // ^Above function will give clicked as output
+
+// calling the server fro processing 
+
+
 
 btnTranslate.addEventListener("click", clickHandler);
 
