@@ -1,4 +1,5 @@
 var btnTranslate = document.querySelector("#btn-translate");
+// this is referrence to button in html.query selector selects a particular element  from HTML document.
 
 var txtInput = document.querySelector("#txt-input");
 
