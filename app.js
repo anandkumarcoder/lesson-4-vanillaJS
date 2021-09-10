@@ -14,18 +14,11 @@ function getTranslationURL(text) {
 
 function errorHandler(error) {
     console.log("error occured", error)
-    alert("something wrong with server try again after sometime"   
-)
+    alert("something wrong with server try again after sometime")
 };
 
 
-//  for below whenver there is event click on btn give click
 
-// btnTranslate.addEventListener("click" , function clickEventHandler() {
-//     console.log("clicked!")
-// } ); 
-
-// new way of doing the same thing as above
 
 function clickHandler()
 
@@ -40,7 +33,8 @@ function clickHandler()
         .then(json => {
             var translatedText = json.contents.translated;
 
-            outputDiv.innerText = translatedText;}) //output
+            outputDiv.innerText = translatedText;
+        }) //output
         .catch(errorHandler)
 };
 
